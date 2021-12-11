@@ -19,6 +19,7 @@
     "rules": {
         "semi": [2, "never"],
         "react/function-component-definition": 0,
-        "react/jsx-filename-extension": 0
+        "react/jsx-filename-extension": 0,
+        "jsx-quotes": [2, "prefer-single"]
     }
 }
