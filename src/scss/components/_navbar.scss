@@ -1,0 +1,23 @@
+.navbar{
+    top: 0;
+    left: 0;
+    height: 15vh;
+    background-color: transparent;
+    color: $color-white;
+    width: 100vw;
+
+    &__items{
+        height: 100%;
+        width: 80vw;
+        margin: 0 auto;
+        border-bottom: 1px solid rgba($color-grey, .2);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-transform: uppercase;
+
+        &-logo{
+            content: url('../../assets/shared/desktop/logo.svg');
+        }
+    }
+}

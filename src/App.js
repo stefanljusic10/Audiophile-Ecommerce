@@ -1,10 +1,13 @@
 import React from 'react'
+import Hero from './components/Home/Hero'
+import Navbar from './components/Navbar/Navbar'
 import './scss/main.scss'
 
 function App() {
   return (
     <div className='app'>
-      App
+      <Navbar />
+      <Hero />
     </div>
   )
 }
