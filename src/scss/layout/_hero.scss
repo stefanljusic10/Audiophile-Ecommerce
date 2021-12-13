@@ -8,4 +8,32 @@
     background-repeat: no-repeat;
     background-position: top center;
     z-index: -1;
+
+    &__content{
+        width: 30vw;
+        transform: translateY(30vh);
+        margin-left: 10vw;
+    }
+
+    &-header{
+        text-transform: uppercase;
+
+        &--third{
+            color: $color-dark-grey-1;
+            letter-spacing: .6rem;
+            font-weight: 400;
+        }
+
+        &--first{
+            color: $color-white;
+            font-size: 3rem;
+            letter-spacing: .3rem;
+            font-weight: 500;
+        }
+    }
+
+    &-text{
+        color: $color-white;
+        font-size: .8rem;
+    }
 }
