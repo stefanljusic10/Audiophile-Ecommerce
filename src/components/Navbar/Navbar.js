@@ -1,12 +1,18 @@
 import React from 'react'
-// import logo from '../assets/shared/desktop/logo.svg'
 
 function Navbar() {
   return (
     <div className='navbar'>
-      <navbar className='navbar__items'>
-        <img className='navbar__items-logo' alt='AUDIOPHILE LOGO' />
-      </navbar>
+      <nav className='navbar__elements'>
+        <img className='navbar__elements-logo' alt='AUDIOPHILE LOGO' />
+        <ul className='navbar__elements-list'>
+          <li className='navbar_elements-list--item'>Home</li>
+          <li className='navbar_elements-list--item'>Headphones</li>
+          <li className='navbar_elements-list--item'>Speakers</li>
+          <li className='navbar_elements-list--item'>Earphones</li>
+        </ul>
+        <img className='navbar__elements-cart' alt='AUDIOPHILE CART ICON' />
+      </nav>
     </div>
   )
 }
