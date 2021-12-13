@@ -1,6 +1,20 @@
-.button{
+.btnOrange{
     @include button;
     color: $color-white;
     background-color: $color-orange;
+    border: none;
+}
+
+.btnTransparent{
+    @include button;
+    color: $color-black;
+    background-color: transparent;
+    border: 1px solid $color-black;
+}
+
+.btnBlack{
+    @include button;
+    color: $color-white;
+    background-color: $color-black;
     border: none;
 }
