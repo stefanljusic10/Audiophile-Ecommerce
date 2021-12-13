@@ -1,0 +1,20 @@
+.navlist{
+    list-style: none;
+
+    &-item{
+        display: inline-block;
+        margin-right: 3vw;
+        font-size: 0.8rem;
+        color: $color-grey;
+        transition: .1s ease;
+
+        &:last-child{
+            margin-right: 0;
+        }
+
+        &:hover{
+            transform: scale(1.1);
+            color: $color-orange;
+        }
+    }
+}

@@ -20,28 +20,6 @@
             content: url('../../assets/shared/desktop/logo.svg');
         }
 
-        &-list{
-            list-style: none;
-
-            // doesn't recognize &--item
-            li{
-                display: inline-block;
-                margin-right: 3vw;
-                font-size: 0.8rem;
-                color: $color-grey;
-                transition: .1s ease;
-
-                &:last-child{
-                    margin-right: 0;
-                }
-
-                &:hover{
-                    transform: scale(1.1);
-                    color: $color-orange;
-                }
-            }
-        }
-
         &-cart{
             content: url('../../assets/shared/desktop/icon-cart.svg');
             opacity: .7;
