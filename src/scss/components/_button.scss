@@ -1,0 +1,6 @@
+.button{
+    @include button;
+    color: $color-white;
+    background-color: $color-orange;
+    border: none;
+}

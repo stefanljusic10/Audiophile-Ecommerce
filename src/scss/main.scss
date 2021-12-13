@@ -1,9 +1,11 @@
 @import './abstracts/variables';
+@import './abstracts/mixins';
 
 @import './core/global';
 
 @import './layout/hero';
 
+@import './components/button';
 @import './components/navbar';
 @import './components/navlist';
 
