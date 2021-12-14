@@ -23,6 +23,9 @@
         "jsx-quotes": [2, "prefer-single"],
         "linebreak-style": 0,
         "react/self-closing-comp": 0,
-        "react/button-has-type": 0
+        "react/button-has-type": 0,
+        "global-require": 0,
+        "no-undef": 0,
+        "import/no-cycle": 0
     }
 }
