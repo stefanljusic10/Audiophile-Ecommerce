@@ -16,12 +16,7 @@
         justify-content: space-between;
         text-transform: uppercase;
 
-        &-logo{
-            content: url('../../assets/shared/desktop/logo.svg');
-        }
-
         &-cart{
-            content: url('../../assets/shared/desktop/icon-cart.svg');
             opacity: .7;
             transition: .1s ease;
 
