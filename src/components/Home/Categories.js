@@ -1,24 +1,50 @@
 import React, { useContext } from 'react'
 import { StoreContext } from '../../App'
+import earphones from '../../assets/shared/desktop/image-category-thumbnail-earphones.png'
+import headphones from '../../assets/shared/desktop/image-category-thumbnail-headphones.png'
+import speakers from '../../assets/shared/desktop/image-category-thumbnail-speakers.png'
+import arrowRight from '../../assets/shared/desktop/icon-arrow-right.svg'
 
 function Categories() {
   const store = useContext(StoreContext)
-  const categoriesImages = store[6].images
-
-  categoriesImages.map((cat) => console.log(cat.desktop))
-
-  // const categoriesJSX = categoriesImages.map((cat) => (
-  //   <div className='categories__item' key={cat.desktop}>
-  //     <img className='categories__item-image' src={cat.desktop} alt='CATEGORY'></img>
-  // eslint-disable-next-line max-len
-  //     <img className='categories__item-image' src='../../assets/shared/desktop/image-best-gear.jpg' alt='CATEGORY'></img>
-  //   </div>
-  // ))
+  // eslint-disable-next-line no-unused-vars
+  const categoriesImages = store[6]
 
   return (
     <div className='categories'>
-      {/* {categoriesJSX} */}
-      <img src={require(`${categoriesImages[0].desktop}`)} alt='cat'></img>
+      <div className='categories__box'>
+        <div className='categories__item'>
+          <img className='categories__item-image' src={headphones} alt='Category'></img>
+          <h3 className='categories__item-header'>Headphones</h3>
+          <button className='categories__item-button margin-top-small'>
+            Shop
+            &ensp;
+            <img className='categories__item-arrow' src={arrowRight} alt='ARROW'></img>
+          </button>
+        </div>
+      </div>
+      <div className='categories__box'>
+        <div className='categories__item'>
+          <img className='categories__item-image' src={speakers} alt='Category'></img>
+          <h3 className='categories__item-header'>Speakers</h3>
+          <button className='categories__item-button margin-top-small'>
+            Shop
+            &ensp;
+            <img className='categories__item-arrow' src={arrowRight} alt='ARROW'></img>
+          </button>
+        </div>
+      </div>
+      <div className='categories__box'>
+        <div className='categories__item'>
+          <img className='categories__item-image' src={earphones} alt='Category'></img>
+          <h3 className='categories__item-header'>Earphones</h3>
+          <button className='categories__item-button margin-top-small'>
+            Shop
+            &ensp;
+            <img className='categories__item-arrow' src={arrowRight} alt='ARROW'></img>
+          </button>
+        </div>
+      </div>
     </div>
   )
 }

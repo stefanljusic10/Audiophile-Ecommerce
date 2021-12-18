@@ -5,7 +5,6 @@ import store from './services/data.json'
 import './scss/main.scss'
 
 export const StoreContext = createContext()
-console.log(store)
 
 function App() {
   return (

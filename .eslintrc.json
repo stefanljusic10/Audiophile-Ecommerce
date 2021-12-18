@@ -29,6 +29,7 @@
         "import/no-cycle": 0,
         "import/prefer-default-export": 0,
         "import/no-absolute-path": 0,
-        "import/no-dynamic-require": 0
+        "import/no-dynamic-require": 0,
+        "react/jsx-one-expression-per-line": 0
     }
 }
