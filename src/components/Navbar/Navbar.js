@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import NavList from './NavList'
-import logo from '../../assets/shared/desktop/logo.svg'
-import cartIcon from '../../assets/shared/desktop/icon-cart.svg'
+import { StoreContext } from '../../App'
 
 function Navbar() {
+  const store = useContext(StoreContext)
+  const logo = store[7].logo.desktop
+  const cartIcon = store[7].cart.desktop
   return (
     <div className='navbar'>
       <nav className='navbar__elements'>

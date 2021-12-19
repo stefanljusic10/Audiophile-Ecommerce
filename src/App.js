@@ -4,7 +4,7 @@ import Navbar from './components/Navbar/Navbar'
 import store from './services/data.json'
 import './scss/main.scss'
 
-export const StoreContext = createContext()
+export const StoreContext = createContext(store)
 
 function App() {
   return (
