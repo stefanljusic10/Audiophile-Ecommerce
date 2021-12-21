@@ -4,8 +4,8 @@ import { StoreContext } from '../../App'
 
 function Navbar() {
   const store = useContext(StoreContext)
-  const logo = store[7].logo.desktop
-  const cartIcon = store[7].cart.desktop
+  const logo = store[6].logo.desktop
+  const cartIcon = store[6].cart.desktop
   return (
     <div className='navbar'>
       <nav className='navbar__elements'>

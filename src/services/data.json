@@ -521,9 +521,9 @@
   },
   {
     "id": 7,
-    "slug": "categories",
-    "name": "Categories",
-    "image": [
+    "slug": "shared",
+    "name": "Shared",
+    "categories": [
       {
         "name": "image-category-thumbnail-headphones",
         "mobile": "./assets/shared/mobile/image-category-thumbnail-headphones.png",
@@ -542,12 +542,7 @@
         "tablet": "./assets/shared/tablet/image-category-thumbnail-earphones.png",
         "desktop": "../assets/shared/desktop/image-category-thumbnail-earphones.png"
       }
-    ]
-  },
-  {
-    "id": 8,
-    "slug": "icons",
-    "name": "Icons",
+    ],
     "logo": {
       "mobile": "./assets/shared/mobile/logo.svg",
       "tablet": "./assets/shared/tablet/logo.svg",
@@ -578,5 +573,31 @@
       "tablet": "./assets/shared/tablet/icon-twitter.svg",
       "desktop": "./assets/shared/desktop/icon-twitter.svg"
     }
+  },
+  {
+    "id": 8,
+    "slug": "home",
+    "name": "Home",
+    "image": [
+      {
+        "slug": "speaker-zx9",
+        "mobile": "./assets/home/mobile/image-speaker-zx9.png",
+        "tablet": "./assets/home/tablet/image-speaker-zx9.png",
+        "desktop": "./assets/home/desktop/image-speaker-zx9.png",
+        "circles": "./assets/home/desktop/pattern-circles.svg"
+      },
+      {
+        "slug": "speaker-zx7",
+        "mobile": "./assets/home/mobile/image-speaker-zx7.jpg",
+        "tablet": "./assets/home/tablet/image-speaker-zx7.jpg",
+        "desktop": "./assets/home/desktop/image-speaker-zx7.jpg"
+      },
+      {
+        "slug": "earphones-yx1",
+        "mobile": "./assets/home/mobile/image-earphones-yx1.jpg",
+        "tablet": "./assets/home/tablet/image-earphones-yx1.jpg",
+        "desktop": "./assets/home/desktop/image-earphones-yx1.jpg"
+      }
+    ]
   }
 ]
