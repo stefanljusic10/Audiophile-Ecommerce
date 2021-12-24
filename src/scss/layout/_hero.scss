@@ -27,19 +27,9 @@
             letter-spacing: .8rem;
             font-weight: 400;
         }
-
-        &--first{
-            text-transform: uppercase;
-            color: $color-white;
-            font-size: 3.4rem;
-            letter-spacing: .2rem;
-            font-weight: 500;
-        }
     }
 
     &-text{
         color: $color-dark-grey-1;
-        font-size: 1rem;
-        line-height: 1.4rem;
     }
 }

@@ -14,7 +14,7 @@
 
 .btnBlack{
     @include button;
-    color: $color-white;
+    color: $color-grey;
     background-color: $color-black;
     border: none;
 }

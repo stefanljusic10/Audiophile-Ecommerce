@@ -578,7 +578,7 @@
     "id": 8,
     "slug": "home",
     "name": "Home",
-    "image": [
+    "images": [
       {
         "slug": "speaker-zx9",
         "mobile": "./assets/home/mobile/image-speaker-zx9.png",

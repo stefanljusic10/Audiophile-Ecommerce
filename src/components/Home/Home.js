@@ -1,7 +1,7 @@
 import React from 'react'
 import Hero from './Hero'
 import Categories from './Categories'
-import Products from './HomeProducts/Products'
+import Products from './Products'
 
 function Home() {
   return (

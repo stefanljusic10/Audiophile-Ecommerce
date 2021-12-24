@@ -4,10 +4,12 @@
 
 @import './core/global';
 @import './core/animations';
+@import './core/typography';
 
 @import './layout/hero';
 @import './layout/categories';
 @import './layout/products';
+@import './layout/productBox';
 
 @import './components/button';
 @import './components/navbar';
