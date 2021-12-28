@@ -1,0 +1,43 @@
+.about{
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+    height: 85vh;
+    margin: 16vh auto;
+
+    &__content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 48%;
+
+        &-header{
+            width: 25vw;
+            font-size: 2rem;
+            color: $color-black;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .1rem;
+
+            &--word{
+                color: $color-orange;
+            }
+        }
+        
+        &-text{
+            width: 30vw;
+            color: $color-dark-grey-1;
+        }
+    }
+
+    &__gear{
+        width: 48%;
+        border-radius: .5rem;
+        overflow: hidden;
+
+        &-image{
+            width: 100%;
+            height: auto;
+        }
+    }
+}

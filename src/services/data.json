@@ -543,6 +543,26 @@
         "desktop": "../assets/shared/desktop/image-category-thumbnail-earphones.png"
       }
     ],
+    "social": [
+      {
+        "name": "facebook",
+        "mobile": "./assets/shared/mobile/icon-facebook.svg",
+        "tablet": "./assets/shared/tablet/icon-facebook.svg",
+        "desktop": "./assets/shared/desktop/icon-facebook.svg"
+      },
+      {
+        "name": "instagram",
+        "mobile": "./assets/shared/mobile/icon-instagram.svg",
+        "tablet": "./assets/shared/tablet/icon-instagram.svg",
+        "desktop": "./assets/shared/desktop/icon-instagram.svg"
+      },
+      {
+        "name": "twitter",
+        "mobile": "./assets/shared/mobile/icon-twitter.svg",
+        "tablet": "./assets/shared/tablet/icon-twitter.svg",
+        "desktop": "./assets/shared/desktop/icon-twitter.svg"
+      }
+    ],
     "logo": {
       "mobile": "./assets/shared/mobile/logo.svg",
       "tablet": "./assets/shared/tablet/logo.svg",
@@ -558,20 +578,10 @@
       "tablet": "./assets/shared/tablet/icon-cart.svg",
       "desktop": "./assets/shared/desktop/icon-cart.svg"
     },
-    "facebook": {
-      "mobile": "./assets/shared/mobile/icon-facebook.svg",
-      "tablet": "./assets/shared/tablet/icon-facebook.svg",
-      "desktop": "./assets/shared/desktop/icon-facebook.svg"
-    },
-    "instagram": {
-      "mobile": "./assets/shared/mobile/icon-instagram.svg",
-      "tablet": "./assets/shared/tablet/icon-instagram.svg",
-      "desktop": "./assets/shared/desktop/icon-instagram.svg"
-    },
-    "twitter": {
-      "mobile": "./assets/shared/mobile/icon-twitter.svg",
-      "tablet": "./assets/shared/tablet/icon-twitter.svg",
-      "desktop": "./assets/shared/desktop/icon-twitter.svg"
+    "bestGear": {
+      "mobile": "./assets/shared/mobile/image-best-gear.jpg",
+      "tablet": "./assets/shared/tablet/image-best-gear.jpg",
+      "desktop": "./assets/shared/desktop/image-best-gear.jpg"
     }
   },
   {

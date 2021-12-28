@@ -1,0 +1,10 @@
+.social{
+    &__icon{
+        display: inline-block;
+        margin-left: 1.5vw;
+
+        &:first-child{
+            margin-left: 0;
+        }
+    }
+}

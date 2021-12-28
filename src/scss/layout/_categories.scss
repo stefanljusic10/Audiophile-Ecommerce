@@ -1,7 +1,7 @@
 .categories{
     display: flex;
     justify-content: space-between;
-    margin: 12vh 10vw;
+    margin: 16vh 10vw;
 
     &__box{
         width: 25vw;
@@ -11,15 +11,15 @@
         transition: .2s ease;
 
         &:hover{
-            transform: scale(1.1);
+            transform: scale(1.05);
 
-            &:first-child{
-                transform-origin: 0 50%;
-            }
+            // &:first-child{
+            //     transform-origin: 0 50%;
+            // }
 
-            &:last-child{
-                transform-origin: 100% 50%;
-            }
+            // &:last-child{
+            //     transform-origin: 100% 50%;
+            // }
         }
     }
 
