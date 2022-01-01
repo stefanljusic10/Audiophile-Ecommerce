@@ -2,9 +2,15 @@
     &__icon{
         display: inline-block;
         margin-left: 1.5vw;
+        transition: .2s ease;
 
         &:first-child{
             margin-left: 0;
+        }
+
+        &:hover{
+            cursor: pointer;
+            transform: scale(1.1);
         }
     }
 }

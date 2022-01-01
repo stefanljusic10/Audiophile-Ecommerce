@@ -3,19 +3,15 @@
 
     &-item{
         display: inline-block;
-        margin-right: 3vw;
         font-size: .8rem;
-        color: $color-grey;
         transition: .2s ease;
         text-transform: uppercase;
-
-        &:last-child{
-            margin-right: 0;
-        }
-
-        &:hover{
+        color: $color-grey;
+        
+        &:hover, &:focus, &:active{
             transform: scale(1.1);
             color: $color-orange;
+            backface-visibility: hidden;
         }
     }
 }

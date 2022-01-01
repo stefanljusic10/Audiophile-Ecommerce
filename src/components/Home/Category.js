@@ -9,8 +9,8 @@ function Category({ cat }) {
     <div className='categories__box' key={cat.name}>
       <div className='categories__item'>
         <img className='categories__item-image' src={cat.desktop} alt='cat'></img>
-        <h3 className='categories__item-header'>Headphones</h3>
-        <button className='categories__item-button margin-top-small'>
+        <h3 className='categories__item-header'>{cat.name}</h3>
+        <button className='btnCategory margin-top-small'>
           Shop &ensp;
           <img className='categories__item-arrow' src={arrowRight} alt='arrow'></img>
         </button>

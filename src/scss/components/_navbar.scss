@@ -1,10 +1,14 @@
+.navBlack{ background-color: $color-black; }
+.navTransparent{ background-color: transparent;}
+
 .navbar{
+    position: absolute;
     top: 0;
     left: 0;
     height: 15vh;
-    background-color: transparent;
     color: $color-white;
     width: 100vw;
+    z-index: 1;
 
     &__elements{
         height: 100%;

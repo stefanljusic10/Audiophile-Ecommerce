@@ -5,6 +5,7 @@
 @import './core/global';
 @import './core/animations';
 @import './core/typography';
+@import './core/link';
 
 @import './layout/hero';
 @import './layout/categories';
@@ -21,3 +22,4 @@
 
 @import './pages/app';
 @import './pages/home';
+@import './pages/error';

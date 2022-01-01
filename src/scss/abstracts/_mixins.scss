@@ -4,9 +4,10 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 600;
+    cursor: pointer;
     transition: .1s ease;
+    z-index: 122;
 
-    // hover doesn't work
     &:hover{
         transform: scale(1.05);
     }

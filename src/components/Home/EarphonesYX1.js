@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import { StoreContext } from '../../App'
 
 function EarphonesYX1({ slug }) {
@@ -12,7 +13,9 @@ function EarphonesYX1({ slug }) {
       </div>
       <div className='products__yx1-right productBox'>
         <div className='products__yx1-right--header heading-small'>YX1 Earphones</div>
-        <button className='products__yx1-content--button btnTransparent margin-top-small'>See product</button>
+        <Link className='link' to='/yx1'>
+          <button className='products__yx1-content--button btnTransparent margin-top-small'>See product</button>
+        </Link>
       </div>
     </div>
   )

@@ -1,0 +1,16 @@
+.error{
+    display: block;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    color: red;
+
+    &-message{
+        position: absolute;
+        top: 30vh;
+        left: 15vw;
+        font-size: 4rem;
+        font-weight: 700;
+        color: $color-black;
+    }
+}

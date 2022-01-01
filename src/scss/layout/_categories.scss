@@ -41,15 +41,6 @@
             text-transform: uppercase;
         }
 
-        &-button{
-            border: none;
-            background-color: transparent;
-            text-transform: uppercase;
-            font-size: .85rem;
-            font-weight: 700;
-            color: $color-dark-grey-1;
-        }
-
         &-arrow{
             transform: translateY(.1vw);
         }
