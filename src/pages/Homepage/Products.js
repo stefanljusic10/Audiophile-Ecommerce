@@ -6,9 +6,9 @@ import SpeakerZX9 from './SpeakerZX9'
 function Products() {
   return (
     <div className='products'>
-      <SpeakerZX9 slug='speaker-zx9' />
-      <SpeakerZX7 slug='speaker-zx7' />
-      <EarphonesYX1 slug='earphones-yx1' />
+      <SpeakerZX9 />
+      <SpeakerZX7 />
+      <EarphonesYX1 />
     </div>
   )
 }

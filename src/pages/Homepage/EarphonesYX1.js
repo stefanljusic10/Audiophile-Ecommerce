@@ -1,10 +1,11 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { StoreContext } from '../../App'
 
-function EarphonesYX1({ slug }) {
+function EarphonesYX1() {
+  const navigate = useNavigate()
   const store = useContext(StoreContext)
-  const yx1 = store[7].images.filter((el) => el.slug === slug)[0]
+  const yx1 = store[7].images[2]
 
   return (
     <div className='products__yx1 margin-top-small'>
@@ -13,9 +14,12 @@ function EarphonesYX1({ slug }) {
       </div>
       <div className='products__yx1-right productBox'>
         <div className='products__yx1-right--header heading-small'>YX1 Earphones</div>
-        <Link className='link' to='/yx1'>
-          <button className='products__yx1-content--button btnTransparent margin-top-small'>See product</button>
-        </Link>
+        <button
+          className='products__yx1-content--button btnTransparent margin-top-small'
+          onClick={() => navigate(`${yx1.category}/${yx1.slug}`)}
+        >
+          See product
+        </button>
       </div>
     </div>
   )

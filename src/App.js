@@ -1,14 +1,12 @@
 import React, { createContext } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Hero from './components/Home/Hero'
-import Categories from './components/Home/Categories'
-import Products from './components/Home/Products'
-import About from './components/Home/About'
 import Navbar from './components/Navbar/Navbar'
-import store from './services/data.json'
+import Homepage from './pages/Homepage/Homepage'
 import Footer from './components/Footer/Footer'
-import ErrorPage from './components/ErrorPage/ErrorPage'
-import Headphones from './components/Headphones/Headphones'
+import ErrorPage from './pages/ErrorPage/ErrorPage'
+import SelectedCategory from './pages/SelectedCategory/SelectedCategory'
+import SingleProduct from './pages/SingleProduct/SingleProduct'
+import store from './services/data.json'
 import './scss/main.scss'
 
 export const StoreContext = createContext(store)
@@ -20,13 +18,11 @@ function App() {
         <Router>
           <Navbar />
           <Routes>
-            <Route path='/' element={<Hero />} />
-            <Route path='/headphones' element={<Headphones />} />
+            <Route path='/' element={<Homepage />} />
+            <Route path='/:selectedCategory' element={<SelectedCategory />} />
+            <Route path='/:selectedCategory/:singleProduct' element={<SingleProduct />} />
             <Route path='*' element={<ErrorPage />} />
           </Routes>
-          <Categories />
-          <Products />
-          <About />
           <Footer />
         </Router>
       </StoreContext.Provider>

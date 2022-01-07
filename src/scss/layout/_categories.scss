@@ -1,7 +1,8 @@
 .categories{
     display: flex;
     justify-content: space-between;
-    margin: 16vh 10vw;
+    width: 80%;
+    margin: 16vh auto;
 
     &__box{
         width: 25vw;
