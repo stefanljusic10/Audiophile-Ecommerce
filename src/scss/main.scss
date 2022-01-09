@@ -12,6 +12,8 @@
 @import './layout/products';
 @import './layout/productBox';
 @import './layout/about';
+@import './layout/addition';
+@import './layout/gallery';
 
 @import './components/button';
 @import './components/navbar';
@@ -19,9 +21,10 @@
 @import './components/footer';
 @import './components/logo';
 @import './components/social';
+@import './components/addToCart';
 
 @import './pages/app';
 @import './pages/homepage';
 @import './pages/error';
 @import './pages/selectedCategory';
-@import './pages/selectedProduct';
+@import './pages/singleProduct';

@@ -1,13 +1,12 @@
 import React, { useContext, useEffect } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { StoreContext } from '../../App'
-import ProductContent from './ProductContent'
-import PreviewImage from './PreviewImage'
+import ButtonBack from '../../components/Button/ButtonBack'
+import ProductPreview from './ProductPreview'
 
 function SelectedCategory() {
   const store = useContext(StoreContext)
   const { selectedCategory } = useParams()
-  const navigate = useNavigate()
   const categoryRoutes = ['headphones', 'speakers', 'earphones']
 
   useEffect(() => {
@@ -19,18 +18,12 @@ function SelectedCategory() {
 
   const products = store.map((product, index) => {
     if (product.category === selectedCategory) {
-      if (index % 2 === 1) {
-        return (
-          <div className='selected__category' key={product.id}>
-            <PreviewImage image={product.image.desktop} />
-            <ProductContent content={product} />
-          </div>
-        )
-      }
       return (
-        <div className='selected__category' key={product.id}>
-          <ProductContent content={product} />
-          <PreviewImage image={product.image.desktop} />
+        <div key={product.id}>
+          <ProductPreview
+            content={product}
+            index={index}
+          />
         </div>
       )
     }
@@ -41,6 +34,7 @@ function SelectedCategory() {
       <div className='selected-heading heading-medium'>
         {selectedCategory}
       </div>
+      <ButtonBack />
       {products}
     </div>
   )

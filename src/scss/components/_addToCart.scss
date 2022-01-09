@@ -1,0 +1,27 @@
+.add{
+    display: flex;
+
+    &-counter{
+        width: 2.5rem;
+        height: rem;
+        line-height: 3rem;
+        text-align: center;
+        background-color: $color-light-grey;
+        color: $color-dark-grey-1;
+        font-weight: 600;
+
+        &:nth-child(2){
+            color: $color-dark-grey-2;
+        }
+
+        &:not(:nth-child(2)){
+            &:active{
+                background-color: $color-grey;
+            }
+        }
+    }
+
+    &-btn{
+        margin-left: 1.5rem;
+    }
+}

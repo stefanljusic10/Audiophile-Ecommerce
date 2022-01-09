@@ -1,0 +1,33 @@
+.single{
+    width: 100%;
+    height: 15vh;
+    height: auto;
+    padding-top: 15vh;
+    margin: 0 auto;
+
+    &__gallery{
+        display: grid;
+        grid-gap: 2.5rem;
+        grid-template-columns: 2fr 3fr;
+        grid-template-rows: .8fr .8fr;
+        width: 80%;
+        height: 83vh;
+        margin-left: auto;
+        margin-right: auto;
+        grid-template-areas: 
+        '. MyArea'
+        '. MyArea'
+        ;
+
+        &-box{
+            &--second{
+                grid-area: MyArea;
+            }
+        }
+
+        &-img{
+            width: 100%;
+            height: auto;
+        }
+    }
+}

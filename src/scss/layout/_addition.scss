@@ -1,0 +1,31 @@
+.addition{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+
+    &__features{
+        width: 45%;
+
+        &-heading{
+            color: $color-black;
+        }
+    }
+
+    &__includes{
+        width: auto;
+        margin-left: 20%;
+
+        &_table{
+
+            &-cell{
+                padding-top: .8vh;
+        
+                &:first-child{
+                    width: 2vw;
+                    color: $color-orange;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

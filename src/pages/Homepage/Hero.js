@@ -1,7 +1,12 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { StoreContext } from '../../App'
 
 function Hero() {
+  const navigate = useNavigate()
+  const store = useContext(StoreContext)
+  const product = store[3]
+
   return (
     <div className='hero'>
       <img className='hero-image' src='./assets/home/desktop/image-hero.jpg' alt='hero'></img>
@@ -15,9 +20,12 @@ function Hero() {
           <br></br>
           enthusiasist.
         </p>
-        <Link className='link' to='/xx99'>
-          <button className='btnOrange margin-top-small'>See Product</button>
-        </Link>
+        <button
+          className='btnOrange margin-top-small'
+          onClick={() => navigate(`${product.category}/${product.slug}`)}
+        >
+          See Product
+        </button>
       </div>
     </div>
   )
