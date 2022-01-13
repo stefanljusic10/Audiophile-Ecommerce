@@ -1,15 +1,11 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import { ItemCounterContext } from '../../App'
 
 function AddToCart({ product }) {
   const itemCounter = useContext(ItemCounterContext)
   const [countItem, setCountItem] = useState(0)
-
-  useEffect(() => {
-    console.log(itemCounter.state)
-  }, [countItem])
 
   const changeCount = (e) => {
     if (e === '+') { setCountItem(countItem + 1) }
@@ -27,7 +23,6 @@ function AddToCart({ product }) {
       </div>
 
       <div className='add-counter'>{countItem}</div>
-      {/* <div className='add-counter'>{itemCounter.state[0].count}</div> */}
 
       <div
         className='add-counter'
