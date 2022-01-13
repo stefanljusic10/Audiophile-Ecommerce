@@ -18,7 +18,7 @@ function ProductContent({ content }) {
         <div className='selected__content-price margin-top-small'>
           $ {content.price}
         </div>
-        <AddToCart />
+        <AddToCart product={content} />
       </div>
     )
   }

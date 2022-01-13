@@ -1,35 +1,34 @@
-export const initialState = [
-  {
-    productName: '',
-    count: 0,
-  },
-]
-
 export const reducer = (state, action) => {
-  let productIndex
+  // returns -1 if product doesn't exist
+  const indexOfProductInCart = state.findIndex((item) => item.productName === action.productName)
   const newState = state
 
   switch (action.type) {
-    case 'increment':
-      if (state.filter((item) => item.productName === action.productName).length === 0) {
-        return state.push({ productName: action.productName, count: action.count + 1 })
+    case 'increment': {
+      if (indexOfProductInCart) {
+        newState[state.length] = { productName: action.productName, count: state.count + 1 }
+        return newState
       }
-
-      productIndex = state.findIndex((item) => item.productName === action.productName)
-      newState[productIndex].count += 1
+      newState[indexOfProductInCart] = { productName: action.productName, count: state.count + 1 }
       return newState
-
-    case 'decrement':
-      if (state.filter((item) => item.productName === action.productName).length === 0) {
-        return state.push({ productName: action.productName, count: action.count - 1 })
+    }
+    case 'decrement': {
+      if (indexOfProductInCart) {
+        newState[state.length] = { productName: action.productName, count: state.count - 1 }
+        return newState
       }
-
-      productIndex = state.findIndex((item) => item.productName === action.productName)
-      newState[productIndex].count -= 1
+      newState[indexOfProductInCart] = { productName: action.productName, count: state.count - 1 }
       return newState
-
-    case 'addToCart': return { counter: state.counter + action.payload }
-    case 'remove': return initialState
+    }
+    case 'addToCart': {
+      if (indexOfProductInCart) {
+        newState[state.length] = { productName: action.productName, count: action.count }
+        return newState
+      }
+      newState[indexOfProductInCart] = { productName: action.productName, count: action.count }
+      return newState
+    }
+    case 'remove': return state.splice(indexOfProductInCart, 1)
     default: return state
   }
 }

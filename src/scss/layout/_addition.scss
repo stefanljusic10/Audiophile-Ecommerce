@@ -15,16 +15,20 @@
         width: auto;
         margin-left: 20%;
 
-        &_table{
+        &-heading{
+            color: $color-black;
+        }
+    }
 
-            &-cell{
-                padding-top: .8vh;
-        
-                &:first-child{
-                    width: 2vw;
-                    color: $color-orange;
-                    font-weight: 600;
-                }
+    &__table{
+        &-cell{
+            padding-top: .8vh;
+    
+            &:first-child{
+                width: 2vw;
+                color: $color-orange;
+                font-weight: 600;
+                font-size: 1.2rem;
             }
         }
     }

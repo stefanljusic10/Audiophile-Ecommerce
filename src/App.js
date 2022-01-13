@@ -1,4 +1,4 @@
-import React, { createContext, useReducer } from 'react'
+import React, { createContext, useMemo, useReducer } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import Homepage from './pages/Homepage/Homepage'
@@ -8,19 +8,21 @@ import SelectedCategory from './pages/SelectedCategory/SelectedCategory'
 import SingleProduct from './pages/SingleProduct/SingleProduct'
 import ScrollToTop from './services/ScrollToTop'
 import store from './services/data.json'
-import { reducer, initialState } from './services/ItemCounter'
+import { reducer } from './services/ItemCounter'
 import './scss/main.scss'
 
-const [state, dispatch] = useReducer(reducer, initialState)
-
 export const StoreContext = createContext(store)
-export const ItemCountContext = createContext()
+export const ItemCounterContext = createContext()
 
 function App() {
+  const initialState = []
+  const [state, dispatch] = useReducer(reducer, initialState)
+  const counter = useMemo(() => ({ state, dispatch }), [])
+
   return (
     <div className='app'>
       <StoreContext.Provider value={store}>
-        <ItemCountContext value={{ state, dispatch }}>
+        <ItemCounterContext.Provider value={counter}>
           <Router>
             <ScrollToTop />
             <Navbar />
@@ -32,7 +34,7 @@ function App() {
             </Routes>
             <Footer />
           </Router>
-        </ItemCountContext>
+        </ItemCounterContext.Provider>
       </StoreContext.Provider>
     </div>
   )
