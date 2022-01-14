@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { ItemCounterContext } from '../../App'
 
 function AddToCart({ product }) {
@@ -11,6 +11,10 @@ function AddToCart({ product }) {
     if (e === '+') { setCountItem(countItem + 1) }
     if (e === '-' && countItem > 0) { setCountItem(countItem - 1) }
   }
+
+  useEffect(() => {
+    console.log(itemCounter.state)
+  }, [itemCounter.state])
 
   return (
     <div className='add margin-top-small'>
@@ -33,7 +37,10 @@ function AddToCart({ product }) {
       </div>
       <button
         className='add-btn btnOrange'
-        onClick={() => itemCounter.dispatch({ type: 'addToCart', productName: product.name, count: countItem })}
+        onClick={() => {
+          itemCounter.dispatch({ type: 'addToCart', productName: product.name, count: countItem })
+          console.log(itemCounter.state)
+        }}
       >
         Add to Cart
       </button>
