@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { StoreContext } from '../../App'
+import { DataContext } from '../../App'
 import ButtonBack from '../../components/Button/ButtonBack'
 import ProductPreview from './ProductPreview'
 
 function SelectedCategory() {
-  const store = useContext(StoreContext)
+  const data = useContext(DataContext)
   const { selectedCategory } = useParams()
   const categoryRoutes = ['headphones', 'speakers', 'earphones']
 
@@ -16,7 +16,7 @@ function SelectedCategory() {
     }
   }, [])
 
-  const products = store.map((product, index) => {
+  const products = data.map((product, index) => {
     if (product.category === selectedCategory) {
       return (
         <div key={product.id}>

@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import { StoreContext } from '../../App'
+import { DataContext } from '../../App'
 
 function Category({ cat }) {
-  const store = useContext(StoreContext)
-  const arrowRight = store[6].arrowRight.desktop
+  const data = useContext(DataContext)
+  const arrowRight = data[6].arrowRight.desktop
 
   return (
     <div className='categories__box' key={cat.name}>

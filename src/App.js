@@ -1,5 +1,6 @@
-import React, { createContext, useMemo, useReducer } from 'react'
+import React, { createContext } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Provider } from 'react-redux'
 import Navbar from './components/Navbar/Navbar'
 import Homepage from './pages/Homepage/Homepage'
 import Footer from './components/Footer/Footer'
@@ -7,22 +8,18 @@ import ErrorPage from './pages/ErrorPage/ErrorPage'
 import SelectedCategory from './pages/SelectedCategory/SelectedCategory'
 import SingleProduct from './pages/SingleProduct/SingleProduct'
 import ScrollToTop from './services/ScrollToTop'
-import store from './services/data.json'
-import { reducer } from './services/ItemCounter'
+import data from './services/data.json'
+import store from './redux/store'
 import './scss/main.scss'
 
-export const StoreContext = createContext(store)
+export const DataContext = createContext(data)
 export const ItemCounterContext = createContext()
 
 function App() {
-  const initialState = []
-  const [state, dispatch] = useReducer(reducer, initialState)
-  const counter = useMemo(() => ({ state, dispatch }), [])
-
   return (
     <div className='app'>
-      <StoreContext.Provider value={store}>
-        <ItemCounterContext.Provider value={counter}>
+      <DataContext.Provider value={data}>
+        <Provider store={store}>
           <Router>
             <ScrollToTop />
             <Navbar />
@@ -34,8 +31,8 @@ function App() {
             </Routes>
             <Footer />
           </Router>
-        </ItemCounterContext.Provider>
-      </StoreContext.Provider>
+        </Provider>
+      </DataContext.Provider>
     </div>
   )
 }

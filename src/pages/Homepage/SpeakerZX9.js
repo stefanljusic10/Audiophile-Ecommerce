@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { StoreContext } from '../../App'
+import { DataContext } from '../../App'
 
 function SpeakerZX9() {
   const navigate = useNavigate()
-  const store = useContext(StoreContext)
-  const product = store[7].images[0]
+  const data = useContext(DataContext)
+  const product = data[7].images[0]
 
   return (
     <div className='products__zx9 productBox'>

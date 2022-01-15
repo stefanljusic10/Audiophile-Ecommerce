@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { StoreContext } from '../../App'
+import { DataContext } from '../../App'
 
 function Logo() {
-  const store = useContext(StoreContext)
-  const logo = store[6].logo.desktop
+  const data = useContext(DataContext)
+  const logo = data[6].logo.desktop
 
   return (
     <Link className='link' to='/'>

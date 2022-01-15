@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import { StoreContext } from '../../App'
+import { DataContext } from '../../App'
 
 function SocialMedia() {
-  const store = useContext(StoreContext)
-  const { social } = store[6]
+  const data = useContext(DataContext)
+  const { social } = data[6]
   const socialIconsJSX = social.map((icon) => (
     <div className='social__icon' key={icon.name}>
       <img src={icon.desktop} alt={icon.name}></img>

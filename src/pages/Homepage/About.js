@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import { StoreContext } from '../../App'
+import { DataContext } from '../../App'
 
 function About() {
-  const store = useContext(StoreContext)
-  const bestGearImage = store[6].bestGear.desktop
+  const data = useContext(DataContext)
+  const bestGearImage = data[6].bestGear.desktop
 
   return (
     <div className='about'>

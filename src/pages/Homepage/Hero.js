@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { StoreContext } from '../../App'
+import { DataContext } from '../../App'
 
 function Hero() {
   const navigate = useNavigate()
-  const store = useContext(StoreContext)
-  const product = store[3]
+  const data = useContext(DataContext)
+  const product = data[3]
 
   return (
     <div className='hero'>
