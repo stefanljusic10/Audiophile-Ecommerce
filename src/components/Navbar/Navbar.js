@@ -12,17 +12,13 @@ function Navbar() {
   const location = useLocation()
   const path = location.pathname
 
-  console.log(itemCounter)
-
-  const itemsSum = itemCounter
+  const allItemsCountSum = itemCounter
     .map((item) => item.count)
     .reduce((prev, curr) => prev + curr, 0)
 
-  console.log(itemsSum)
-
-  const totalItemsInCart = (
+  const numberOfItemsInCart = (
     <span className='navbar__elements-sum'>
-      {itemsSum}
+      {allItemsCountSum}
     </span>
   )
 
@@ -33,7 +29,7 @@ function Navbar() {
         <NavList />
         <Link className='link' to='/cart'>
           <img className='navbar__elements-cart' src={cartIcon} alt='AUDIOPHILE CART ICON' />
-          {itemsSum > 0 ? totalItemsInCart : null}
+          {allItemsCountSum > 0 ? numberOfItemsInCart : null}
         </Link>
       </nav>
     </div>
