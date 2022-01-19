@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/interactive-supports-focus */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useContext } from 'react'
 import { useSelector } from 'react-redux'
 import { DataContext } from '../../App'
@@ -23,7 +21,7 @@ function CartIcon() {
   )
 
   return (
-    <div className='cartIcon' to='/cart' role='button'>
+    <div className='cartIcon' to='/cart'>
       <img className='navbar__elements-cart' src={cartIcon} alt='AUDIOPHILE CART ICON' />
       {allItemsCountSum > 0 ? numberOfItemsInCart : null}
       {toggleCart.toggle ? <CartPortal /> : null}
