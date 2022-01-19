@@ -1,18 +1,17 @@
-import React, { useState, useContext } from 'react'
+/* eslint-disable jsx-a11y/interactive-supports-focus */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import React, { useContext } from 'react'
 import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
 import { DataContext } from '../../App'
 import CartPortal from './CartPortal'
 
 function CartIcon() {
-  const [isHover, setIsHover] = useState(false)
   const itemCounter = useSelector((state) => state.counter)
+  const toggleCart = useSelector((state) => state.toggleCart)
   const data = useContext(DataContext)
   const cartIcon = data[6].cart.desktop
 
-  const hoverCartOn = () => { setIsHover(true) }
-  const hoverCartOff = () => { setIsHover(false) }
-
+  // showing number off all items in cart
   const allItemsCountSum = itemCounter
     .map((item) => item.count)
     .reduce((prev, curr) => prev + curr, 0)
@@ -24,16 +23,11 @@ function CartIcon() {
   )
 
   return (
-    <Link
-      className='link'
-      to='/cart'
-      onMouseOver={() => hoverCartOn()}
-      onMouseOut={() => hoverCartOff()}
-    >
+    <div className='cartIcon' to='/cart' role='button'>
       <img className='navbar__elements-cart' src={cartIcon} alt='AUDIOPHILE CART ICON' />
       {allItemsCountSum > 0 ? numberOfItemsInCart : null}
-      {isHover ? <CartPortal /> : null}
-    </Link>
+      {toggleCart.toggle ? <CartPortal /> : null}
+    </div>
   )
 }
 

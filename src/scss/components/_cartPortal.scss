@@ -1,10 +1,12 @@
 .cartPortal{
     position: absolute;
     top: 12vh;
-    left: 73vw;
-    width: 18vw;
+    left: 65vw;
+    width: 30vw;
     height: 40vh;
     background-color: $color-white;
     color: yellow;
     z-index: 9;
+    animation-name: cartPopupAppearance;
+    animation-duration: .5s;
 }

@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { createContext } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
@@ -10,14 +12,14 @@ import SingleProduct from './pages/SingleProduct/SingleProduct'
 import ScrollToTop from './services/ScrollToTop'
 import data from './services/data.json'
 import store from './redux/store'
+import toggleCartPortal from './services/toggleCartPortal'
 import './scss/main.scss'
 
 export const DataContext = createContext(data)
-export const ItemCounterContext = createContext()
 
 function App() {
   return (
-    <div className='app'>
+    <div className='app' onClick={(e) => toggleCartPortal(e)}>
       <DataContext.Provider value={data}>
         <Provider store={store}>
           <Router>

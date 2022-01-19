@@ -2,3 +2,14 @@
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
+@keyframes cartPopupAppearance {
+    from {
+        transform: translateY(-2vh);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
