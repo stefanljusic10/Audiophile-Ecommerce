@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const counterSlice = createSlice({
   name: 'counter',
   initialState: [],
+  // initialState: JSON.parse(localStorage.getItem('cart')) || [],
   reducers: {
     increment: (state, action) => {
       // returns -1 if product is not in cart
