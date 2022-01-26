@@ -5,7 +5,7 @@ import CartPortal from './CartPortal'
 
 function CartIcon() {
   const itemCounter = useSelector((state) => state.counter)
-  const toggleCart = useSelector((state) => state.toggleCart)
+  const toggleCartPortal = useSelector((state) => state.toggleCart)
   const data = useContext(DataContext)
   const cartIcon = data[6].cart.desktop
 
@@ -15,16 +15,16 @@ function CartIcon() {
     .reduce((prev, curr) => prev + curr, 0)
 
   const numberOfItemsInCart = (
-    <span className='navbar__elements-sum'>
+    <span className='cartIcon-counter'>
       {allItemsCountSum}
     </span>
   )
 
   return (
-    <div className='cartIcon' to='/cart'>
-      <img className='navbar__elements-cart' src={cartIcon} alt='AUDIOPHILE CART ICON' />
+    <div className='cartIcon'>
       {allItemsCountSum > 0 ? numberOfItemsInCart : null}
-      {toggleCart.toggle ? <CartPortal /> : null}
+      <img className='cartIcon-icon' src={cartIcon} alt='AUDIOPHILE CART ICON' />
+      {toggleCartPortal.toggle ? <CartPortal /> : null}
     </div>
   )
 }
