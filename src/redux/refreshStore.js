@@ -1,5 +1,7 @@
-const refreshStore = () => {
-  if (localStorage.getItem('cart') !== null) {
+function refreshStore() {
+  const cart = localStorage.getItem('cart')
+
+  if (cart !== null) {
     return JSON.parse(localStorage.getItem('applicationState'))
   }
 }
