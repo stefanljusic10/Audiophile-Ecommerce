@@ -8,6 +8,7 @@ function CartIcon() {
   const toggleCartPortal = useSelector((state) => state.toggleCart)
   const data = useContext(DataContext)
   const cartIcon = data[6].cart.desktop
+  console.log(toggleCartPortal)
 
   // showing number off all items in cart
   const allItemsCountSum = itemCounter

@@ -2,9 +2,12 @@ import store from '../redux/store'
 import { openCartPopup, closeCartPopup } from '../redux/toggleCartSlice'
 
 const toggleCartPortal = (e) => {
-  if (e.target.classList.contains('navbar__elements-cart')) {
+  console.log(e.target.classList)
+  if (e.target.classList.contains('cartIcon-icon')) {
     store.dispatch(openCartPopup())
-  } else store.dispatch(closeCartPopup())
+  } else if (!e.target.classList.contains('cartPortal')) {
+    store.dispatch(closeCartPopup())
+  }
 }
 
 export default toggleCartPortal
