@@ -36,9 +36,9 @@
         "object-curly-newline": 0,
         "array-callback-return": 0,
         "consistent-return": 0,
-        "click-events-have-key-events": 0,
         "interactive-supports-focus": 0,
         "no-unused-expressions": 0,
-        "no-lone-blocks": 0
+        "no-lone-blocks": 0,
+        "no-param-reassign": [2, { "props": false }]
     }
 }

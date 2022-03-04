@@ -8,12 +8,21 @@ function CartIcon() {
   const toggleCartPortal = useSelector((state) => state.toggleCart)
   const data = useContext(DataContext)
   const cartIcon = data[6].cart.desktop
-  console.log(toggleCartPortal)
 
+  // v1
   // showing number off all items in cart
   const allItemsCountSum = itemCounter
     .map((item) => item.count)
     .reduce((prev, curr) => prev + curr, 0)
+
+  // v2
+  // const localSt = JSON.parse(localStorage.getItem('cart'))
+  // const totalitemsInCart = localSt
+  //   .map((item) => item.count)
+  //   .reduce((prev, curr) => prev + curr, 0)
+
+  // console.log(...localSt)
+  // console.log(totalitemsInCart)
 
   const numberOfItemsInCart = (
     <span className='cartIcon-counter'>
