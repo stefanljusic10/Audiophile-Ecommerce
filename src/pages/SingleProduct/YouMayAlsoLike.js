@@ -1,8 +1,9 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import data from '../../services/data.json'
 
 function YouMayAlsoLike() {
+  const navigate = useNavigate()
   const { singleProduct } = useParams()
   // filtering similar products to current
   const similarProducts = data.filter((item) => item.slug === singleProduct)[0].others
@@ -11,7 +12,11 @@ function YouMayAlsoLike() {
     <div className='similarProducts__box-item'>
       <img className='similarProducts__box-item--image' src={item.image.desktop} alt={item.name}></img>
       <div className='similarProducts__box-item--heading heading-mini margin-top-small'>{item.name}</div>
-      <button className='btnOrange margin-top-small'>See Product</button>
+      <button
+        className='btnOrange margin-top-small'
+        onClick={() => navigate(`/${item.category}/${item.slug}`, { replace: true })}
+      >See Product
+      </button>
     </div>
   ))
 
