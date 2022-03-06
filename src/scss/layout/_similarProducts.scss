@@ -9,5 +9,18 @@
     &__box{
         display: flex;
         justify-content: space-between;
+
+        &-item{
+            width: 30%;
+
+            &--image{
+                width: 100%;
+            }
+
+            &--heading{
+                color: $color-black;
+            }
+        }
+
     }
 }
