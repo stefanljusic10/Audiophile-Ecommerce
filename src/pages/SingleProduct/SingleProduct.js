@@ -5,6 +5,7 @@ import ButtonBack from '../../components/Button/ButtonBack'
 import ProductPreview from '../SelectedCategory/ProductPreview'
 import Addition from './Addition'
 import Gallery from './Gallery'
+import YouMayAlsoLike from './YouMayAlsoLike'
 
 function SingleProduct() {
   const { singleProduct } = useParams()
@@ -17,6 +18,7 @@ function SingleProduct() {
       <ProductPreview content={product} />
       <Addition content={product} />
       <Gallery content={product} />
+      <YouMayAlsoLike />
     </div>
   )
 }

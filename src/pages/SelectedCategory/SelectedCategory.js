@@ -29,13 +29,23 @@ function SelectedCategory() {
     }
   })
 
+  /*
+      <div className='selected-heading heading-medium'>
+        {selectedCategory}
+      </div>
+
+      this code shouldn't be child of this component, make it independent
+  */
+
   return (
     <div className='selected'>
       <div className='selected-heading heading-medium'>
         {selectedCategory}
       </div>
       <ButtonBack />
-      {products}
+      <div className='selected-products'>
+        {products}
+      </div>
     </div>
   )
 }

@@ -1,0 +1,13 @@
+.similarProducts{
+    width: 100%;
+    text-align: center;
+
+    &__heading{
+        color: $color-black;
+    }
+
+    &__box{
+        display: flex;
+        justify-content: space-between;
+    }
+}

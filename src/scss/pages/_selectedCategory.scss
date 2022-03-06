@@ -5,7 +5,8 @@
     margin: 0 auto;
 
     &-heading{
-        width: 100%;
+        margin: 0 auto;
+        margin-left: -10vw;
         height: 30vh;
         line-height: 30vh;
         color: $color-white;
@@ -13,8 +14,13 @@
         background-color: $color-black;
     }
 
-    &__category{
+    &-products{
+        margin: 0 auto;
         width: 80%;
+    }
+
+    &__category{
+        width: 100%;
         display: flex;
         justify-content: space-between;
         margin: 16vh auto;
