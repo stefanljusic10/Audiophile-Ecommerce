@@ -12,12 +12,23 @@ export const counterSlice = createSlice({
         .findIndex((item) => item.productName === action.payload.productName)
       // not in cart, append with initial count of 1
       if (indexOfProductInCart === -1) {
-        return [...state, { productName: action.payload.productName, count: 1 }]
+        return [
+          ...state,
+          {
+            productName: action.payload.productName,
+            price: action.payload.price,
+            count: 1,
+          },
+        ]
       }
       // In cart, increment count by 1
       return [
         state.filter((item) => item.productName) !== action.payload.productName,
-        { productName: action.payload.productName, count: state.count + 1 },
+        {
+          productName: action.payload.productName,
+          price: action.payload.price * (state.count + 1),
+          count: state.count + 1,
+        },
       ]
     },
     decrement: (state, action) => {
@@ -25,7 +36,14 @@ export const counterSlice = createSlice({
         .findIndex((item) => item.productName === action.payload.productName)
       // not in cart, append with initial count of 0
       if (indexOfProductInCart === -1) {
-        return [...state, { productName: action.payload.productName, count: 1 }]
+        return [
+          ...state,
+          {
+            productName: action.payload.productName,
+            price: 0,
+            count: 1,
+          },
+        ]
       }
       // one product in cart, decrement by one and remove from cart
       if (newState[indexOfProductInCart].count === 1) {
@@ -34,7 +52,11 @@ export const counterSlice = createSlice({
       // Two or more items in cart, decrement count by 1
       return [
         state.filter((item) => item.productName) !== action.payload.productName,
-        { productName: action.payload.productName, count: state.count - 1 },
+        {
+          productName: action.payload.productName,
+          price: action.payload.price * (state.count - 1),
+          count: state.count - 1,
+        },
       ]
     },
     addToCart: (state, action) => {
@@ -42,12 +64,23 @@ export const counterSlice = createSlice({
         .findIndex((item) => item.productName === action.payload.productName)
       // not in cart, append product with initial action count
       if (indexOfProductInCart === -1) {
-        return [...state, { productName: action.payload.productName, count: action.payload.count }]
+        return [
+          ...state,
+          {
+            productName: action.payload.productName,
+            price: action.payload.price * action.payload.count,
+            count: action.payload.count,
+          },
+        ]
       }
       // in cart, remove product and append same one with new initial action count
       return [
         ...state.slice(indexOfProductInCart, 0),
-        { productName: action.payload.productName, count: action.payload.count },
+        {
+          productName: action.payload.productName,
+          price: action.payload.price * action.payload.count,
+          count: action.payload.count,
+        },
       ]
     },
     remove: (state) => {

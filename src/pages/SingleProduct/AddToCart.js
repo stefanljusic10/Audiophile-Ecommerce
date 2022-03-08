@@ -34,7 +34,13 @@ function AddToCart({ product }) {
       </div>
       <button
         className='add-btn btnOrange'
-        onClick={() => dispatch(addToCart({ productName: product.name, count: countItem }))}
+        onClick={
+          () => dispatch(addToCart({
+            productName: product.name,
+            price: product.price,
+            count: countItem,
+          }))
+        }
       >
         Add to Cart
       </button>
