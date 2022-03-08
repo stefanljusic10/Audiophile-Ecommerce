@@ -9,7 +9,7 @@ function YouMayAlsoLike() {
   const similarProducts = data.filter((item) => item.slug === singleProduct)[0].others
 
   const similarProductsBox = similarProducts.map((item) => (
-    <div className='similarProducts__box-item'>
+    <div className='similarProducts__box-item' key={item.name}>
       <img className='similarProducts__box-item--image' src={item.image.desktop} alt={item.name}></img>
       <div className='similarProducts__box-item--heading heading-mini margin-top-small'>{item.name}</div>
       <button
