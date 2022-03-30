@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { DataContext } from '../../App'
 import ButtonBack from '../../components/Button/ButtonBack'
 import ProductPreview from './ProductPreview'
@@ -7,6 +7,7 @@ import ProductPreview from './ProductPreview'
 function SelectedCategory() {
   const data = useContext(DataContext)
   const { selectedCategory } = useParams()
+  const navigate = useNavigate()
   const categoryRoutes = ['headphones', 'speakers', 'earphones']
 
   useEffect(() => {

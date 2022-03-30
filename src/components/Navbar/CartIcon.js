@@ -10,19 +10,19 @@ function CartIcon() {
   const cartIcon = data[6].cart.desktop
 
   // showing number off all items in cart
-  const allItemsCountSum = itemCounter
+  const totalItemsInCart = itemCounter
     .map((item) => item.count)
     .reduce((prev, curr) => prev + curr, 0)
 
   const numberOfItemsInCart = (
     <span className='cartIcon-counter'>
-      {allItemsCountSum}
+      {totalItemsInCart}
     </span>
   )
 
   return (
     <div className='cartIcon'>
-      {allItemsCountSum > 0 ? numberOfItemsInCart : null}
+      {totalItemsInCart > 0 ? numberOfItemsInCart : null}
       <img className='cartIcon-icon' src={cartIcon} alt='AUDIOPHILE CART ICON' />
       {toggleCartPortal.toggle ? <CartPortal /> : null}
     </div>
