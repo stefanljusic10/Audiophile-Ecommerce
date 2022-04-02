@@ -61,14 +61,13 @@ export const counterSlice = createSlice({
     },
     addToCart: (state, action) => {
       const indexOfProductInCart = state
-        .findIndex((item) => item.productName === action.payload.productName)
+        .findIndex((item) => item.itemInCart.id === action.payload.itemInCart.id)
       // not in cart, append product with initial action count
       if (indexOfProductInCart === -1) {
         return [
           ...state,
           {
-            productName: action.payload.productName,
-            price: action.payload.price * action.payload.count,
+            itemInCart: { ...action.payload.itemInCart },
             count: action.payload.count,
           },
         ]
@@ -77,21 +76,16 @@ export const counterSlice = createSlice({
       return [
         ...state.slice(indexOfProductInCart, 0),
         {
-          productName: action.payload.productName,
-          price: action.payload.price * action.payload.count,
+          itemInCart: { ...action.payload.itemInCart },
           count: action.payload.count,
         },
       ]
     },
-    remove: (state) => {
-      const indexOfProductInCart = state
-        .findIndex((item) => item.productName === action.productName)
-      return state.filter((item, index) => index !== indexOfProductInCart)
-    },
+    removeAll: () => [],
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, addToCart, remove } = counterSlice.actions
+export const { increment, decrement, addToCart, removeAll } = counterSlice.actions
 
 export default counterSlice.reducer

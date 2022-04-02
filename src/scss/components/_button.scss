@@ -29,7 +29,6 @@
   cursor: pointer;
 }
 
-
 .btnGoBack{
   border: none;
   background-color: transparent;
@@ -38,4 +37,16 @@
   margin-left: 10%;
   transform: translateY(10vh);
   cursor: pointer;
+}
+
+.btnRemoveAll{
+  border: none;
+  background-color: transparent;
+  color: $color-dark-grey-1;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover{
+    text-decoration: underline;
+  }
 }

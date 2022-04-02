@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../../redux/counterSlice'
+import data from '../../services/data.json'
 
 function AddToCart({ product }) {
   const [countItem, setCountItem] = useState(0)
@@ -11,6 +12,12 @@ function AddToCart({ product }) {
   const changeCount = (e) => {
     if (e === '+') { setCountItem(countItem + 1) }
     if (e === '-' && countItem > 0) { setCountItem(countItem - 1) }
+  }
+
+  const addItem = async (itemName) => {
+    const filterAddedItem = await data.filter((item) => item.name === itemName)[0]
+    const itemInCart = { itemInCart: filterAddedItem, count: countItem }
+    dispatch(addToCart(itemInCart))
   }
 
   return (
@@ -34,13 +41,7 @@ function AddToCart({ product }) {
       </div>
       <button
         className='add-btn btnOrange'
-        onClick={
-          () => dispatch(addToCart({
-            productName: product.name,
-            price: product.price,
-            count: countItem,
-          }))
-        }
+        onClick={() => addItem(product.name)}
       >
         Add to Cart
       </button>
