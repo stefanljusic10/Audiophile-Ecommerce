@@ -10,18 +10,6 @@ export const counterSlice = createSlice({
       // returns index of product if it is in cart
       const indexOfProductInCart = state
         .findIndex((item) => item.itemInCart.id === action.payload.itemInCart.id)
-      console.log(indexOfProductInCart)
-      // not in cart, append with initial count of 1
-      // if (indexOfProductInCart === -1) {
-      //   return [
-      //     ...state,
-      //     {
-      //       productName: action.payload.productName,
-      //       price: action.payload.price,
-      //       count: 1,
-      //     },
-      //   ]
-      // }
       // In cart, increment count by 1
       return [
         ...state.filter((item) => item.itemInCart.id !== action.payload.itemInCart.id),
@@ -34,17 +22,6 @@ export const counterSlice = createSlice({
     decrement: (state, action) => {
       const indexOfProductInCart = state
         .findIndex((item) => item.productName === action.payload.productName)
-      // not in cart, append with initial count of 0
-      // if (indexOfProductInCart === -1) {
-      //   return [
-      //     ...state,
-      //     {
-      //       productName: action.payload.productName,
-      //       price: 0,
-      //       count: 1,
-      //     },
-      //   ]
-      // }
       // one product in cart, decrement by one and remove from cart
       if (state[indexOfProductInCart].itemInCart.count === 1) {
         return state.filter((_, index) => index !== indexOfProductInCart)
