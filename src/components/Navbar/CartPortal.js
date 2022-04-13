@@ -1,11 +1,14 @@
+/* eslint-disable jsx-a11y/interactive-supports-focus */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react'
 import reactDom from 'react-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import ButtonRemoveAll from '../Button/ButtonRemoveAll'
+import { increment, decrement } from '../../redux/counterSlice'
 
 function CartPortal() {
-  let showCart = null
   const inCart = useSelector((state) => state.counter)
+  const dispatch = useDispatch()
   console.log(inCart)
 
   // showing number off all items in cart
@@ -17,24 +20,14 @@ function CartPortal() {
     return null
   }
 
-  showCart = inCart.map((item) => (
+  const showCart = inCart.map((item) => (
     <div className='cartPortal__products-item' key={item.itemInCart.id}>
       <img className='cartPortal__products-image' src={item.itemInCart.image.desktop} alt='img'></img>
       <div className='cartPortal__products-name text'>{item.itemInCart.name}</div>
-      <div
-        className='add-counter'
-        role='button'
-      >
-        -
-      </div>
-
-      <div className='add-counter'>{item.count}</div>
-
-      <div
-        className='add-counter'
-        role='button'
-      >
-        +
+      <div className='cartPortal__products-counter'>
+        <div className='add-counter' role='button' onClick={() => dispatch(decrement(item))}>-</div>
+        <div className='add-counter'>{item.count}</div>
+        <div className='add-counter' role='button' onClick={() => dispatch(increment(item))}>+</div>
       </div>
     </div>
   ))
