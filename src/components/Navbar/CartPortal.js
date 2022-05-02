@@ -3,13 +3,14 @@
 import React from 'react'
 import reactDom from 'react-dom'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import ButtonRemoveAll from '../Button/ButtonRemoveAll'
 import { increment, decrement } from '../../redux/counterSlice'
 
 function CartPortal() {
+  const navigate = useNavigate()
   const inCart = useSelector((state) => state.counter)
   const dispatch = useDispatch()
-  console.log(inCart)
 
   // showing number off all items in cart
   const totalIPriceInCart = inCart
@@ -47,7 +48,12 @@ function CartPortal() {
         {showCart}
       </div>
       <div className='cartPortal__checkout'>
-        <button className='cartPortal__btnCheckout btnOrange'>Checkout</button>
+        <button
+          className='cartPortal__btnCheckout btnOrange'
+          onClick={() => navigate('/checkout')}
+        >
+          Checkout
+        </button>
         <div className='cartPortal__checkoutPrice heading-mini'>$ {totalIPriceInCart}</div>
       </div>
     </div>,

@@ -14,6 +14,7 @@ import data from './services/data.json'
 import store from './redux/store'
 import toggleCartPortal from './services/toggleCartPortal'
 import './scss/main.scss'
+import Checkout from './pages/Checkout/Checkout'
 
 export const DataContext = createContext(data)
 
@@ -29,6 +30,7 @@ function App() {
               <Route path='/' element={<Homepage />} />
               <Route path='/:selectedCategory' element={<SelectedCategory />} />
               <Route path='/:selectedCategory/:singleProduct' element={<SingleProduct />} />
+              <Route path='/checkout' element={<Checkout />} />
               <Route path='*' element={<ErrorPage />} />
             </Routes>
             <Footer />
