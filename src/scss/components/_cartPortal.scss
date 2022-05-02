@@ -3,7 +3,7 @@
     top: 12vh;
     left: 65vw;
     width: 30vw;
-    height: 40vh;
+    height: auto;
     background-color: $color-white;
     color: yellow;
     z-index: 9;
@@ -13,10 +13,6 @@
     padding: 1.6rem;
     display: flex;
     flex-direction: column;
-
-    &-btn{
-        
-    }
 
     &__header{
         width: 100%;
@@ -43,6 +39,10 @@
             display: flex;
             align-items: center;
             position: relative;
+
+            &:not(:first-child){
+                margin-top: 1vh;
+            }
         }
 
         &-image{
@@ -53,6 +53,7 @@
         &-name{
             color: $color-dark-grey-1;
             font-weight: 600;
+            margin-left: .5vw;
         }
 
         &-counter{
@@ -60,6 +61,21 @@
             position: absolute;
             right: 0;
         }
+    }
+
+    &__checkout{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1vh;
+    }
+
+    &__checkoutPrice{
+        color: $color-dark-grey-1;
+    }
+
+    &__btnCheckout{
+        // margin-top: 1vh;
     }
 
 }

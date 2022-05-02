@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 import { createSlice } from '@reduxjs/toolkit'
 
 export const counterSlice = createSlice({
@@ -6,34 +7,40 @@ export const counterSlice = createSlice({
   initialState: JSON.parse(localStorage.getItem('cart')) || [],
   reducers: {
     increment: (state, action) => {
-      // returns -1 if product is not in cart
       // returns index of product if it is in cart
       const indexOfProductInCart = state
         .findIndex((item) => item.itemInCart.id === action.payload.itemInCart.id)
       // In cart, increment count by 1
-      return [
-        ...state.filter((item) => item.itemInCart.id !== action.payload.itemInCart.id),
-        {
-          itemInCart: { ...action.payload.itemInCart },
-          count: state[indexOfProductInCart].count + 1,
-        },
-      ]
+      const incrementedState = state.map((item, index) => {
+        if (indexOfProductInCart === index) {
+          return {
+            itemInCart: item.itemInCart,
+            count: item.count + 1,
+          }
+        }
+        return item
+      })
+      return incrementedState
     },
     decrement: (state, action) => {
       const indexOfProductInCart = state
-        .findIndex((item) => item.productName === action.payload.productName)
+        .findIndex((item) => item.itemInCart.id === action.payload.itemInCart.id)
       // one product in cart, decrement by one and remove from cart
       if (state[indexOfProductInCart].itemInCart.count === 1) {
-        return state.filter((_, index) => index !== indexOfProductInCart)
+        // return state.filter((_, index) => index !== indexOfProductInCart)
+        return state.splice(indexOfProductInCart, 1)
       }
       // Two or more items in cart, decrement count by 1
-      return [
-        ...state.filter((item) => item.itemInCart.id !== action.payload.itemInCart.id),
-        {
-          itemInCart: { ...action.payload.itemInCart },
-          count: state[indexOfProductInCart].count - 1,
-        },
-      ]
+      const decrementedState = state.map((item, index) => {
+        if (indexOfProductInCart === index) {
+          return {
+            itemInCart: item.itemInCart,
+            count: item.count - 1,
+          }
+        }
+        return item
+      })
+      return decrementedState
     },
     addToCart: (state, action) => {
       const indexOfProductInCart = state

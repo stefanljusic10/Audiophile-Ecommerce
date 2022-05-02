@@ -12,9 +12,14 @@ function CartPortal() {
   console.log(inCart)
 
   // showing number off all items in cart
+  const totalIPriceInCart = inCart
+    .map((item) => item.count * item.itemInCart.price)
+    .reduce((acc, curr) => acc + curr, 0)
+
+  // showing number off all items in cart
   const totalItemsInCart = inCart
     .map((item) => item.count)
-    .reduce((prev, curr) => prev + curr, 0)
+    .reduce((acc, curr) => acc + curr, 0)
 
   if (totalItemsInCart === 0) {
     return null
@@ -40,6 +45,10 @@ function CartPortal() {
       </div>
       <div className='cartPortal__products'>
         {showCart}
+      </div>
+      <div className='cartPortal__checkout'>
+        <button className='cartPortal__btnCheckout btnOrange'>Checkout</button>
+        <div className='cartPortal__checkoutPrice heading-mini'>$ {totalIPriceInCart}</div>
       </div>
     </div>,
     document.getElementById('portal-cart'),

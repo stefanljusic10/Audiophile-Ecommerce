@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
-import cartMiddleware from './cartMiddleware'
 import counterReducer from './counterSlice'
 import toggleCartReducer from './toggleCartSlice'
+import cartMiddleware from './cartMiddleware'
 import hydrateStore from './hydrateStore'
 
 export default configureStore({

@@ -2,7 +2,9 @@ function hydrateStore() {
   const cartStorage = localStorage.getItem('cart')
 
   if (cartStorage !== null) {
-    return JSON.parse(cartStorage)
+    const currentStore = JSON.parse(cartStorage)
+    const cleanedStore = currentStore.filter((product) => product.count > 0)
+    return cleanedStore
   }
 }
 
